@@ -1,0 +1,404 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+/** ------------- NAVEGACIÓN ------------- **/
+header {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+.navbar {
+    background-color: #121318;
+    font-weight: 600;
+}
+
+.navbar__logo {
+    width: 100%;
+    height: 100%;
+    max-height: 75px;
+    max-width: 100px;
+}
+
+.navbar__menu>a {
+    text-decoration: none;
+    color: #8CDD00;
+    cursor: pointer;
+}
+
+.navbar__menu--active {
+    border-bottom: 1px solid #8CDD00;
+}
+
+.navbar__menu>a:hover {
+    color: #6db500;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: #121318;
+    color: #8CDD00;
+}
+
+.dropdown-menu>a {
+    background-color: #121318;
+    color: #8CDD00;
+    font-weight: bold;
+}
+
+.dropdown-menu>a:hover {
+    background-color: #6db500;
+}
+
+.collapsed, .navbar-toggler {
+    background-color: #8CDD00;
+}
+
+/** ------------- PRIMERA SECCIÓN - BURGER + BOTÓN ------------- **/
+.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url('../img/burger2.jpg');
+    background-size: cover;
+    background-position: 25% 58%;
+    width: 100%;
+    height: 36em;
+}
+
+.banner__content {
+    color: #8CDD00;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.banner__button {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: -10em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 13pt;
+    border-radius: 5px;
+    background-color: #8CDD00;
+    width: 12em;
+    height: 3em;
+    cursor: pointer;
+    border: 0;
+}
+
+.banner__button:hover {
+    background-color: #6db500;
+}
+
+/** ------------- SEGUNDA SECCIÓN - BURGER + CONTENIDO ------------- **/
+.content {
+    background-color: black;
+    align-items: center;
+}
+
+.content div img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+}
+
+.content__text {
+    color: #8CDD00;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content__text--title {
+    font-size: 3.5em;
+}
+
+.content__text--paragraph {
+    font-size: 3em;
+}
+
+.content__button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 5px;
+    background-color: #8CDD00;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: 0;
+}
+
+
+/** ------------- TERCERA SECCIÓN - NUEVAS PROMOCIONES ------------- **/
+
+.newfood__content {
+    color: #8CDD00;
+    text-align: center;
+}
+
+.newfood__content--title {
+    font-size: 2.5em;
+}
+
+.newfood__content--paragraph {
+    font-size: 1em;
+}
+
+.newfood__content__button {
+    margin: 0 auto;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 1.25em;
+    border-radius: 5px;
+    background-color: #8CDD00;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: 0;
+}
+
+.banner__button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #8CDD00;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button--animated {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button--animated:hover {
+    transform: scale(1.1);
+    background-color: #6db500;
+    animation: pulse 1s infinite;
+}
+
+
+.newfood__content__button:hover {
+    background-color: #6db500;
+}
+
+/** ------------- FOOTER ------------- **/
+footer {
+    align-items: center;
+    text-decoration: none;
+    color: #8CDD00;
+    background-color: #121318;
+    font-weight: 600;
+    padding: 20px;
+}
+
+footer div img {
+    width: 100%;
+    max-width: 40px;
+    margin: 0 auto;
+}
+
+footer div a, button>a {
+    text-decoration: none;
+}
+
+footer div img:hover {
+    cursor: pointer;
+    background-color: #8CDD00;
+    border-radius: 5px;
+}
+
+.img-fluid {
+    width: 100%;
+    max-height: 400px;
+    box-shadow: 0px 0px 5px #8CDD00;
+}
+
+.img-fluid:hover {
+    transform: scale(1.025);
+    transition: 0.3s;
+}
+
+/**  ------------- FORMULARIO ------------- **/
+.form__section {
+    background-color: black;
+}
+
+#h__form {
+    z-index: unset;
+}
+
+.form__section__title {
+    color: #8CDD00;
+    font-size: 36px;
+    text-align: center;
+    z-index: 0;
+}
+
+form {
+    width: 100%;
+    color: white;
+    background-color: #121318;
+    border-radius: 5px;
+    padding: 1vw;
+    box-shadow: 0px 0px 5px #8CDD00;
+}
+
+
+select {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    border: 1px solid #6db500;
+    border-radius: 5px;
+}
+
+.submit {
+    display: block;
+    padding: auto;
+    margin: 0 auto;
+    color: #8CDD00;
+    font-weight: bold;
+    background-color: black;
+    border: 2px solid #6db500;
+    border-radius: 5px;
+}
+
+.submit:hover {
+    background-color: #6db500;
+    color: black;
+    cursor: pointer;
+}
+
+.submit:active {
+    background-color: black;
+    color: #6db500;
+}
+
+.progress-bar-striped {
+    background-color: #8CDD00;
+}
+
+/**  ------------- PÁGINA NOSOTROS ------------- **/
+#escene {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    width: 100%;
+    max-width: 590px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 0px 0px 5px #8CDD00;
+}
+
+.ussection__information {
+    color: #8CDD00;
+}
+
+.ussection__information details summary {
+    margin: 5vh 0vh;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.ussection__information details summary:hover {
+    color: #6db500;
+}
+
+.ussection__information--subsection {
+    margin-left: 3vw;
+}
+
+.text--green {
+    text-decoration: none;
+    color: #8CDD00;
+}
+
+.bg__black {
+    background-color: black;
+}
+
+.bg__grey {
+    background-color: #121318;
+}
+
+.border--green {
+    border: 2px solid #8CDD00;
+}
+
+.border--green:hover {
+    border: 2px solid #6db500;
+    background-color: #121318;
+}
+
+
+
+/** ----------- MODALES -----------**/
+
+.modal-header {
+    border-bottom: 2px solid #8CDD00;
+}
+
+.modal-footer {
+    border-top: 2px solid #8CDD00;
+}
+
+.modal__button {
+    background-color: #8CDD00;
+    color: #121318;
+}
+
+.modal__button:hover {
+    background-color: #6db500;
+    color: #121318;
+}
+
+.cross--red {
+    background-color: red;
+}
+
+.modal__image {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 5px;
+}
+
+area {
+    cursor: pointer;
+}
+
+/** ---------- ANIMACIÓN DE BOTÓN --------------*/
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
