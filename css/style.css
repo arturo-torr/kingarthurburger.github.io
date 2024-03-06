@@ -59,7 +59,7 @@ body {
     font-weight: bold;
 }
 
-.dropdown-menu>a:hover {
+.dropdown-menu>a:hover, .dropdown-menu>li:hover {
     background-color: #6db500;
 }
 
@@ -73,16 +73,16 @@ body {
     grid-template-columns: 1fr;
     background-image: url('../img/burger2.jpg');
     background-size: cover;
-    background-position: 25% 58%;
+    background-position: 25% 60%;
     width: 100%;
-    height: 36em;
+    height: 90vh;
 }
 
 .banner__content {
     color: #8CDD00;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2.5em;
     text-transform: uppercase;
     text-align: center;
     margin-top: 0.5em;
@@ -92,10 +92,10 @@ body {
     position: relative;
     display: block;
     margin: 0 auto;
-    top: -12em;
+    top: -30vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 13pt;
+    font-size: 1em;
     border-radius: 5px;
     background-color: #8CDD00;
     width: 13.5em;

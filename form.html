@@ -34,12 +34,6 @@
                 </div>
             </div>
         </nav>
-        <nav id="breadcrumb" class="bg__grey text--green px-2" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item text--green">Inicio</li>
-                <li class="breadcrumb-item text--green fw-bold" aria-current="page">Reservas</li>
-            </ol>
-        </nav>
     </header>
 
     <section id="init_zone" class="d-none">
@@ -70,16 +64,17 @@
                         <form action="" id="kabform" class="mb-3" novalidate>
                             <div class="row m-1 py-2">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                    <label for="username" class="form-label lang" key="select-name">Nombre:</label>
                                     <input type="text" id="name" class="form-control" name="username"
-                                        placeholder="Introduzca su nombre" pattern="[A-Za-zÀ-ÖØ-öø-ÿ']+" required>
+                                        pattern="[A-Za-zÀ-ÖØ-öø-ÿ']+" required>
                                     <div class="invalid-feedback lang" key="invalid-name">
                                         Introduzca un nombre válido.
                                     </div>
                                     <div class="valid-feedback"></div>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                    <label for="surname" class="form-label lang" key="select-surname">Apellidos:</label>
                                     <input type="text" id="surname" class="form-control" name="apellidos"
-                                        placeholder="Introduzca sus apellidos"
                                         pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+(\s[A-Za-zÀ-ÖØ-öø-ÿ]+)?" required>
                                     <div class="invalid-feedback lang" key="invalid-surname">
                                         Introduzca unos apellidos válidos.
@@ -89,16 +84,17 @@
                             </div>
                             <div class="row m-1 py-2">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <input type="text" id="phone" class="form-control" name="phone"
-                                        placeholder="Introduzca su teléfono" pattern="^\d{9,}$" maxlength="9" required>
+                                    <label for="phone" class="form-label lang" key="phone">Teléfono</label>:
+                                    <input type="text" id="phone" class="form-control" name="phone" pattern="^\d{9,}$"
+                                        maxlength="9" required>
                                     <div class="invalid-feedback lang" key="invalid-phone">
                                         Introduzca un teléfono de 9 dígitos.
                                     </div>
                                     <div class="valid-feedback"></div>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <input type="email" id="mail" class="form-control" name="email"
-                                        placeholder="Introduzca su email" required>
+                                    <label for="email" class="form-label">E-Mail:</label>
+                                    <input type="email" id="mail" class="form-control" name="email" required>
                                     <div class="invalid-feedback lang" key="invalid-mail">
                                         El correo introducido no cumple el estándar.
                                     </div>

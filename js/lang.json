@@ -3,6 +3,7 @@
     "inicio": "Inicio",
     "nosotros": "Nosotros",
     "reservas": "Reservas",
+    "galeria": "Galería",
     "categorias": "Categorías",
     "alergenos": "Alérgenos",
     "menus": "Menús",
@@ -25,7 +26,7 @@
     "Fingers de pollo": "Fingers de pollo",
     "Croquetas": "Croquetas",
     "Doble Carne Pepinillo": "Doble Carne Pepinillo",
-    "Carne y Bacon": "Carney Bacon",
+    "Carne y Bacon": "Carne y Bacon",
     "Carne y Huevo": "Carne y Huevo",
     "Desmenuzada con cebolla": "Desmenuzada con cebolla",
     "Bravas españolas": "Bravas españolas",
@@ -103,7 +104,9 @@
     "Lactosa": "Lactosa",
     "Gluten": "Gluten",
     "Soja": "Soja",
-    "Frutos Secos": "Frutos Secos"
+    "Frutos Secos": "Frutos Secos",
+    "select-name": "Nombre:",
+    "select-surname": "Apellidos:"
   },
   "en": {
     "inicio": "Start",
@@ -210,6 +213,8 @@
     "Lactosa": "Lactose",
     "Gluten": "Gluten",
     "Soja": "Soybeans",
-    "Frutos Secos": "Nuts"
+    "Frutos Secos": "Nuts",
+    "select-name": "Name:",
+    "select-surname": "Surname:"
   }
 }

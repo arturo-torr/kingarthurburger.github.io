@@ -1,10 +1,18 @@
 nav = document.getElementById("navbarScroll");
 nav.insertAdjacentHTML(
   "afterbegin",
-  `<button class="btn translate" id="es"><img src="img/espana.png" alt="Traducción España"
-class="translate__img"></button>
-<button class="btn translate" id="en"><img src="img/reino-unido.png" alt="Traducción Inglés"
-class="translate__img"></button>`
+  `
+  <div class="dropdown">
+  <button class="btn dropdown-toggle text--green" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="img/language.png" style="width: 25px; height:25px">
+  </button>
+  <ul class="dropdown-menu text-center">
+   <li class="nav-item"><button class="btn translate" id="es"><img src="img/espana.png" alt="Traducción España"
+class="translate__img"></button></li>
+<li><button class="btn translate" id="en"><img src="img/reino-unido.png" alt="Traducción Inglés"
+class="translate__img"></button></li>
+  </ul>
+</div>`
 );
 $.getJSON("js/lang.json", function (json) {
   //Lenguaje por defecto de la página sessionStorage.setItem("lang", "idioma")"

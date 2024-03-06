@@ -11,25 +11,9 @@ class RestaurantsManagerView {
 
   bindInit(handler) {
     document.getElementById("init").addEventListener("click", (event) => {
-      // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-      let ol = this.breadcrumb.closest("ol");
-      let elements = ol.querySelectorAll("li");
-
-      // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-      for (const element of elements) {
-        if (element !== ol.firstElementChild) element.remove();
-      }
       handler();
     });
     document.getElementById("logo").addEventListener("click", (event) => {
-      // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-      let ol = this.breadcrumb.closest("ol");
-      let elements = ol.querySelectorAll("li");
-
-      // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-      for (const element of elements) {
-        if (element !== ol.firstElementChild) element.remove();
-      }
       handler();
     });
   }
@@ -372,28 +356,6 @@ class RestaurantsManagerView {
 
   // Función que permite mostrar una tarjeta personalizada con la información de cada restaurante
   showRestaurant(res, page) {
-    // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-    let ol = this.breadcrumb.closest("ol");
-    let elements = ol.querySelectorAll("li");
-    // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-    for (const element of elements) {
-      if (element !== ol.firstElementChild) element.remove();
-    }
-    // Elimina el atributo de aria-current
-    ol.firstElementChild.removeAttribute("aria-current");
-    // Creamos un elemento para el restaurante y le damos los estilos pertinentes
-    let pageLi = document.createElement("li");
-    pageLi.classList.add("breadcrumb-item", "text--green");
-    pageLi.textContent = page;
-    ol.appendChild(pageLi);
-
-    // Creamos un li, le damos estilos y lo agregamos
-    let li = document.createElement("li");
-    li.classList.add("breadcrumb-item", "text--green", "fw-bolder");
-    li.ariaCurrent = "page";
-    li.textContent = res.name;
-    ol.append(li);
-
     this.centralzone.replaceChildren();
     this.centralzone.classList.remove("d-none");
 
@@ -451,30 +413,6 @@ class RestaurantsManagerView {
 
   // Función que permite listar los platos
   listDishes(dishes, title, page) {
-    // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-    let ol = this.breadcrumb.closest("ol");
-    let elements = ol.querySelectorAll("li");
-
-    // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-    for (const element of elements) {
-      if (element !== ol.firstElementChild) element.remove();
-    }
-    // Elimina el atributo de aria-current
-    ol.firstElementChild.removeAttribute("aria-current");
-    // Creamos un elemento para la categoría, alérgeno o menú y le damos los estilos pertinentes
-    let pageLi = document.createElement("li");
-    pageLi.classList.add("breadcrumb-item", "text--green");
-    pageLi.textContent = page;
-    // Lo introducimos en el ol
-    ol.appendChild(pageLi);
-
-    // Creamos un li, le damos estilos y lo agregamos
-    let li = document.createElement("li");
-    li.classList.add("breadcrumb-item", "text--green", "fw-bolder");
-    li.ariaCurrent = "page";
-    li.textContent = title;
-    ol.append(li);
-
     // Borra la zona central
     this.centralzone.replaceChildren();
     this.centralzone.classList.remove("d-none");
@@ -514,16 +452,6 @@ class RestaurantsManagerView {
 
   // Función que permite mostrar una tarjeta personalizada con la información de cada plato
   showDish(dish, message) {
-    // Realizamos la creación de las migas de pan, eliminando el atributo de aria-current al último elemento y también la fuente bold
-    let ol = this.breadcrumb.closest("ol");
-    ol.lastElementChild.removeAttribute("aria-current");
-    ol.lastElementChild.classList.remove("fw-bolder");
-    // Creamos un elemento con el nombre del plato y lo agrega a las migas de pan
-    let li = document.createElement("li");
-    li.classList.add("breadcrumb-item", "text--green", "fw-bolder");
-    li.textContent = dish.name;
-    ol.appendChild(li);
-
     this.centralzone.replaceChildren();
 
     // Crea el contenedor y le añade las clases
