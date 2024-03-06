@@ -3,7 +3,6 @@
     "inicio": "Inicio",
     "nosotros": "Nosotros",
     "reservas": "Reservas",
-
     "categorias": "Categorías",
     "alergenos": "Alérgenos",
     "menus": "Menús",
@@ -100,7 +99,11 @@
     "nuestra-ubicacion": "Nuestra ubicación",
     "ubicacion-principal": "Ubicación principal:",
     "españa": "España",
-    "localizaciones": "Nuestras localizaciones"
+    "localizaciones": "Nuestras localizaciones",
+    "Lactosa": "Lactosa",
+    "Gluten": "Gluten",
+    "Soja": "Soja",
+    "Frutos Secos": "Frutos Secos"
   },
   "en": {
     "inicio": "Start",
@@ -203,6 +206,10 @@
     "nuestra-ubicacion": "Our location",
     "ubicacion-principal": "Main location:",
     "españa": "Spain",
-    "localizaciones": "Our locations"
+    "localizaciones": "Our locations",
+    "Lactosa": "Lactose",
+    "Gluten": "Gluten",
+    "Soja": "Soybeans",
+    "Frutos Secos": "Nuts"
   }
 }

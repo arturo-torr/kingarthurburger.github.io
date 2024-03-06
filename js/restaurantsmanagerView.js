@@ -169,7 +169,7 @@ class RestaurantsManagerView {
         `
           <a
             data-category="${category.category.name}"
-            class="dropdown-item"
+            class="dropdown-item lang" key="${category.category.name}"
             href="#dish-list"
           >
             ${category.category.name}
@@ -236,7 +236,7 @@ class RestaurantsManagerView {
         `
           <a
             data-allergen="${allergen.allergen.name}"
-            class="dropdown-item"
+            class="dropdown-item lang" key="${allergen.allergen.name}"
             href="#dish-list"
           >
             ${allergen.allergen.name}
