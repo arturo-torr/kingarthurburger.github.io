@@ -46,7 +46,7 @@ class RestaurantsManagerView {
     // Dentro del div ponemos una cabecera
     container.insertAdjacentHTML(
       "beforeend",
-      `<h1 class="text--green bg__black my-3">Nuestros platos</h1>`
+      `<h1 class="text--green bg__black my-3 lang" key="dish-title">Nuestros platos</h1>`
     );
     // Recorremos el array con los platos y le damos el formato necesario
     for (const dish of dishes) {
@@ -64,8 +64,8 @@ class RestaurantsManagerView {
                 class="img-fluid rounded mb-4">
             </div>
             <div>
-              <h3>${dish.dish.name}</h3>
-              <div>${dish.dish.description}</div>
+              <h3 class="lang" key="${dish.dish.name}">${dish.dish.name}</h3>
+              <div class="lang" key="description-${dish.dish.name}">${dish.dish.description}</div>
             </div>
           </a>
         </div>`
@@ -119,17 +119,17 @@ class RestaurantsManagerView {
     // Se inserta una cabecera dentro del div creado
     container.insertAdjacentHTML(
       "beforeend",
-      `<h1 class="text--green bg__black mt-5">Nuestras categorías</h1>`
+      `<h1 class="text--green bg__black mt-5 lang" key="category-title">Nuestras categorías</h1>`
     );
     // Recorremos las categorías y le damos un formato visible para el HTML
     for (const category of categories) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<div class="col-12 col-sm-4 col-lg-4 col-md-4 col-xl-4 bg__black my-3">
+        `<div class="col-12 col-sm-12  col-md-12 col-lg-4 col-xl-4 bg__black my-3">
           <a class="text--green" data-category="${category.category.name}" href="#dish-list">
             <div class="border--green rounded p-3">
-              <h3>${category.category.name}</h3>
-              <div>${category.category.description}</div>
+              <h3 class="lang" key="${category.category.name}">${category.category.name}</h3>
+              <div class="lang" key="${category.category.description}">${category.category.description}</div>
             </div>
           </a>
         </div>`
@@ -148,7 +148,8 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang"
+        key="categorias"
         href="#"
         id="navCats"
         role="button"
@@ -215,7 +216,7 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang" key="alergenos"
         href="#"
         id="navAllergens"
         role="button"
@@ -269,7 +270,7 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang" key="menus"
         href="#"
         id="navMenus"
         role="button"
@@ -323,7 +324,7 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang" key="restaurantes"
         href="#"
         id="navRests"
         role="button"
@@ -350,6 +351,7 @@ class RestaurantsManagerView {
           </a>`
       );
     }
+
     div.append(container);
     // Inserta el menú de navegación creado
     this.nav.append(div);
@@ -493,9 +495,9 @@ class RestaurantsManagerView {
       div.insertAdjacentHTML(
         "beforeend",
         `<figure class="card bg__black">
-            <a data-name="${dish.dish.name}" href="#single-dish" class="text--green text-center">
+            <a data-name="${dish.dish.name}" href="#single-dish" class="text--green text-center"">
               <img class="img-fluid" src="${dish.dish.image}">
-              <figcaption class="my-3">${dish.dish.name}</figcaption>
+              <figcaption class="my-3 lang" key="${dish.dish.name}">${dish.dish.name}</figcaption>
             </a>
         </figure>`
       );
@@ -505,7 +507,7 @@ class RestaurantsManagerView {
     // Le da una cabecera justo al principio indicando el nombre de la categoría, alérgeno, menú...
     container.insertAdjacentHTML(
       "afterbegin",
-      `<h1 class="text--green my-3">${title}</h1>`
+      `<h1 class="text--green my-3 lang" key="${title}">${title}</h1>`
     );
     this.centralzone.append(container);
   }
@@ -533,7 +535,7 @@ class RestaurantsManagerView {
       container.insertAdjacentHTML(
         "beforeend",
         `<div class="row">
-          <div class="col-12">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
             <div class="card bg__grey border--green">
               <div class="row align-items-center">
                 <div class="col-xl-6">
@@ -543,21 +545,21 @@ class RestaurantsManagerView {
                 </div>
                 <div class="col-xl-6 text-center">
                   <div class="p-4">
-                    <div class="mt-4 mb-3">
-                      <h2 class="text-uppercase text--green fw-bold fst-italic">${dish.name}</h2>
+                    <div class="mb-3">
+                      <h2 class="text-uppercase text--green fw-bold fst-italic lang" key="${dish.name}">${dish.name}</h2>
                     </div>
                     <div class="mt-4 mb-3">
-                      <h6 class="text-uppercase text--green fw-bold">Ingredientes</h6>
-                      <p class="text--green">${dish.stringIngredients}</p>
+                      <h6 class="text-uppercase text--green fw-bold lang" key="Ingredientes">Ingredientes</h6>
+                      <p class="text--green lang" key="ingredients-${dish.name}">${dish.stringIngredients}</p>
                     </div>
                     <div class="mt-5">
-                      <h6 class="text-uppercase text--green fw-bold">Descripción</h6>
-                      <p class="text--green">${dish.description}</p>
+                      <h6 class="text-uppercase text--green fw-bold lang" key="Descripcion">Descripción</h6>
+                      <p class="text--green lang" key="description-${dish.name}">${dish.description}</p>
                     </div>
                     <div class="cart mt-4 align-items-center">
                       <button
                         data-name="${dish.name}"
-                        class="newfood__content__button button--animated text-uppercase mr-2 px-4"
+                        class="newfood__content__button button--animated text-uppercase mr-2 px-4 lang" key="btn-descubrir"
                       >
                         Descubrir ahora
                       </button>

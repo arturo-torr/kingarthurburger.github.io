@@ -12,22 +12,25 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky__nav">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <div class="navbar__menu navbar-brand"><a href="#" id="logo" class="navbar__menu"> <img
+                <div class="navbar__menu navbar-brand"><a href="index.html" id="logo" class="navbar__menu"> <img
                             src="img/logoburger.png" alt="Logo" class="navbar__logo"></a></div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <div class="navbar__menu mx-auto nav-item"><a href="index.html" id="init"
-                            class="navbar__menu">Inicio</a>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="inicio" href="index.html"
+                            id="init">Inicio</a>
                     </div>
-                    <div class="navbar__menu mx-auto nav-item"><a href="nosotros.html">Nosotros</a></div>
-                    <div class="navbar__menu mx-auto nav-item"><a href="form.html">Reservas</a>
-                    </div>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="nosotros"
+                            href="nosotros.html">Nosotros</a></div>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="reservas"
+                            href="form.html">Reservas</a></div>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="galeria"
+                            href="galeria.html">Galería</a></div>
                 </div>
             </div>
         </nav>
@@ -49,11 +52,13 @@
 
         <section class="form__section my-1">
             <header id="h__form">
-                <h1 id="firstTitle" class="form__section__title my-2">Introduzca sus datos para la reserva</h1>
+                <h1 id="firstTitle" class="form__section__title my-2 lang" key="title-form">Introduzca sus datos para la
+                    reserva</h1>
             </header>
 
             <header id="h__form">
-                <h1 id="secondTitle" class="form__section__title my-2 d-none">Su reserva se ha tramitado correctamente.
+                <h1 id="secondTitle" class="form__section__title my-2 d-none lang" key="reserva100">Su reserva se ha
+                    tramitado correctamente.
                 </h1>
             </header>
 
@@ -67,7 +72,7 @@
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <input type="text" id="name" class="form-control" name="username"
                                         placeholder="Introduzca su nombre" pattern="[A-Za-zÀ-ÖØ-öø-ÿ']+" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-name">
                                         Introduzca un nombre válido.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -76,7 +81,7 @@
                                     <input type="text" id="surname" class="form-control" name="apellidos"
                                         placeholder="Introduzca sus apellidos"
                                         pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+(\s[A-Za-zÀ-ÖØ-öø-ÿ]+)?" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-surname">
                                         Introduzca unos apellidos válidos.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -86,7 +91,7 @@
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <input type="text" id="phone" class="form-control" name="phone"
                                         placeholder="Introduzca su teléfono" pattern="^\d{9,}$" maxlength="9" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-phone">
                                         Introduzca un teléfono de 9 dígitos.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -94,7 +99,7 @@
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                     <input type="email" id="mail" class="form-control" name="email"
                                         placeholder="Introduzca su email" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-mail">
                                         El correo introducido no cumple el estándar.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -102,16 +107,18 @@
                             </div>
                             <div class="row m-1 py-2">
                                 <div class="date__sel col-6  col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <label for="dateday" class="form-label">Seleccione el día:</label>
+                                    <label for="dateday" class="form-label lang" key="select-day">Seleccione el
+                                        día:</label>
                                     <input type="date" id="date" name="dateday" class="form-select" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-date">
                                         La fecha está vacía o ha seleccionado un día que ya ha pasado.
                                     </div>
                                     <div class="valid-feedback"></div>
                                 </div>
 
                                 <div class="time__sel col-6  col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <label for="time" class="form-label">Seleccione la hora:</label>
+                                    <label for="time" class="form-label lang" key="select-hour">Seleccione la
+                                        hora:</label>
                                     <select name="time" id="time" class="form-select" required>
                                         <option value=""></option>
                                         <option value="18.00">18:00</option>
@@ -123,7 +130,7 @@
                                         <option value="21:00">21:30</option>
                                     </select>
                                     </label>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-hour">
                                         Debe seleccionar una hora para realizar la reserva.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -131,7 +138,7 @@
                             </div>
 
                             <div class="row m-1 py-2">
-                                <label for="textareainput" class="form-label text-center">
+                                <label for="textareainput" class="form-label text-center lang" key="select-comment">
                                     ¿Algo qué debamos tener en cuenta para la cena?
                                 </label>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -141,9 +148,10 @@
                             </div>
 
                             <div class="row m-1 py-2 text-center">
-                                <label for="preference" class="form-label center">Preferencia de comunicación:</label>
+                                <label for="preference" class="form-label center lang"
+                                    key="select-preference">Preferencia de comunicación:</label>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <label for="phone" class="form-check-label">Teléfono</label>
+                                    <label for="phone" class="form-check-label lang" key="phone">Teléfono</label>
                                     <input type="radio" class="form-check-input" name="preference" value="phone"
                                         checked>
                                 </div>
@@ -152,28 +160,31 @@
                                     <input type="radio" class="form-check-input" name="preference" value="email">
                                 </div>
                             </div>
-                            <button type="submit" class="btn submit">Pasar a formulario de pago</button>
+                            <button type="submit" class="btn submit lang" key="first-form-button">Pasar a formulario de
+                                pago</button>
                         </form>
 
                         <form action="" id="kabform2" class="mb-5 d-none" novalidate>
                             <div class="row m-1 py-2">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <label for="titular" class="form-label">Titular de la tarjeta: </label>
+                                    <label for="titular" class="form-label lang" key="card-titular">Titular de la
+                                        tarjeta: </label>
                                     <input type="text" placeholder="Nombre del titular" id="titular"
                                         class="form-control" name="titular"
                                         pattern="^([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+)(\s+([A-Za-zÑñÁáÉéÍíÓóÚú]+['\-]{0,1}[A-Za-zÑñÁáÉéÍíÓóÚú]+))*$"
                                         required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-cardtitular">
                                         El nombre del titular no es válido.
                                     </div>
                                     <div class="valid-feedback"></div>
                                 </div>
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <label for="numTarjeta" class="form-label">Número de la tarjeta:</label>
+                                    <label for="numTarjeta" class="form-label lang" key="card-num">Número de la
+                                        tarjeta:</label>
                                     <input type="text" id="creditCard" class="form-control" name="creditCard"
                                         placeholder="XXXX XXXX XXXX XXXX" maxlength="16"
                                         pattern="^(5[1-5][0-9]{14}|4[0-9]{12}(?:[0-9]{3})?)$" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-cardnum">
                                         La tarjeta no puede ser aceptada si no es Visa o Mastercard.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -181,11 +192,12 @@
                             </div>
                             <div class="row m-1 py-2">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                    <label for="cardDate" class="form-label">Fecha de caducidad: </label>
+                                    <label for="cardDate" class="form-label lang" key="date-exp">Fecha de caducidad:
+                                    </label>
                                     <input type="text" id="cardDate" class="form-control" name="cardDate"
                                         placeholder="XX / XX" maxlength="5" pattern="^(0[1-9]|1[0-2])\/(2[4-9]|3[0-9])$"
                                         required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-dateexp">
                                         La fecha de caducidad es inválida o está caducada.
                                     </div>
                                     <div class="valid-feedback"></div>
@@ -194,26 +206,27 @@
                                     <label for="cvc" class="form-label">CVC: </label>
                                     <input type="text" id="cvc" class="form-control" name="cvc" placeholder="XXX"
                                         maxlength="4" pattern="[0-9]{3,4}" required>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-feedback lang" key="invalid-cvc">
                                         El campo no puede estar vacío.
                                     </div>
                                     <div class="valid-feedback"></div>
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn submit">Realizar reserva</button>
+                            <button type="submit" class="btn submit lang" key="do-booking">Realizar reserva</button>
 
                             <div class="modal fade" id="confirmModal" data-bs-backdrop="static" data-bs-keyboard="false"
                                 tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content bg__grey">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5 text--green fw-bold" id="confirmModalLabel">
+                                            <h1 class="modal-title fs-5 text--green fw-bold lang" key="confirm-booking"
+                                                id="confirmModalLabel">
                                                 Confirmar reserva</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body bg__grey">
+                                        <div class="modal-body bg__grey lang" key="modal-booking-text">
                                             Aceptando esta operación confirma usted su reserva. Por favor, para la
                                             cancelación será necesario
                                             el aviso al menos 5 horas antes de la reserva. Si no acude o realiza una
@@ -221,10 +234,11 @@
                                             se cobrará a su tarjeta el importe de 24.99€.
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn modal__button fw-bold"
-                                                data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn modal__button fw-bold lang"
+                                                data-bs-dismiss="modal" key="cerrar">Cerrar</button>
                                             <button type="button" id="confirmModalButton"
-                                                class="btn modal__button fw-bold">Entiendo y acepto
+                                                class="btn modal__button fw-bold lang" key="modal-btn-confirm">Entiendo
+                                                y acepto
                                                 los
                                                 términos</button>
                                         </div>
@@ -237,7 +251,7 @@
                 </div>
 
                 <div id="textInfo" class="col-12 text-center mb-5 d-none">
-                    <h3 class="text--green">
+                    <h3 class="text--green lang" key="form-progress">
                         ¡Ya falta poco!
                     </h3>
                 </div>
@@ -269,7 +283,7 @@
         </div>
     </footer>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -279,6 +293,7 @@
         // He metido este script para dar la sensación de no moverse del index
         window.history.replaceState({}, '', 'index.html');
     </script>
+    <script src="./js/language.js"></script>
 </body>
 
 </html>

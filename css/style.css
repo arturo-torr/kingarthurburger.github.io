@@ -12,10 +12,10 @@ body {
 }
 
 /** ------------- NAVEGACIÓN ------------- **/
-header {
+.sticky__nav {
     position: sticky;
     top: 0px;
-    z-index: 10;
+    z-index: 100;
 }
 
 .navbar {
@@ -92,13 +92,13 @@ header {
     position: relative;
     display: block;
     margin: 0 auto;
-    top: -10em;
+    top: -12em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     font-size: 13pt;
     border-radius: 5px;
     background-color: #8CDD00;
-    width: 12em;
+    width: 13.5em;
     height: 3em;
     cursor: pointer;
     border: 0;
@@ -386,6 +386,15 @@ textarea {
 
 area {
     cursor: pointer;
+}
+
+.translate__img {
+    width: 100%;
+    max-width: 20px;
+}
+
+.translate__img:hover {
+    animation: pulse 1s infinite;
 }
 
 /** ---------- ANIMACIÓN DE BOTÓN --------------*/

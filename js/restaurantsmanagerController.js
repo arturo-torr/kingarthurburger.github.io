@@ -94,7 +94,7 @@ class RestaurantsManagerController {
       "Cheddar",
       "Ghouda",
     ];
-    dish4.description = "Burguer con huevo frito, especialidad de la casa";
+    dish4.description = "Burger con huevo frito, especialidad de la casa";
     dish4.image = "img/b3.jpg";
 
     let dish5 = this[MODEL].createDish(
@@ -110,7 +110,7 @@ class RestaurantsManagerController {
       "Mostaza",
     ];
     dish5.description =
-      "Burguer con cerdo desmenuzado, nuestra hamburguesa más artesana";
+      "Burger con cerdo desmenuzado, nuestra hamburguesa más artesana";
     dish5.image = "img/b4.jpg";
 
     let dish6 = this[MODEL].createDish(
