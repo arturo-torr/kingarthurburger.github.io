@@ -177,12 +177,12 @@ function showResume() {
             <div class="col-xl-12 text-center">
               <div class="p-4">
                 <div class="mt-4 mb-3">
-                  <h2 class="text-uppercase text--green fw-bold fst-italic">
+                  <h2 class="text-uppercase text--green fw-bold fst-italic lang" key="book-resume">
                     Resumen de la reserva:
                   </h2>
                 </div>
                 <div class="mt-4 mb-3">
-                  <h6 class="text-uppercase text--green fw-bold">
+                  <h6 class="text-uppercase text--green fw-bold lang" key="name-surnames">
                     Nombre y apellidos
                   </h6>
                   <p class="text--green">
@@ -190,25 +190,25 @@ function showResume() {
                   </p>
                 </div>
                 <div class="mt-4 mb-3">
-                  <h6 class="text-uppercase text--green fw-bold">
+                  <h6 class="text-uppercase text--green fw-bold lang" key="contact-phone">
                     Teléfono de contacto
                   </h6>
                   <p class="text--green">${form.phone.value}</p>
                 </div>
                 <div class="mt-4 mb-3">
-                  <h6 class="text-uppercase text--green fw-bold">
+                  <h6 class="text-uppercase text--green fw-bold lang" key="mail">
                     Correo electrónico
                   </h6>
                   <p class="text--green">${form.mail.value}</p>
                 </div>
                 <div class="mt-4 mb-3">
-                <h6 class="text-uppercase text--green fw-bold">
+                <h6 class="text-uppercase text--green fw-bold lang" key="day-hour">
                   Día y hora
                 </h6>
                 <p class="text--green">${form.date.value} ${form.time.value}</p>
               </div>
               <div class="mt-4 mb-3">
-                <h6 class="text-uppercase text--green fw-bold">
+                <h6 class="text-uppercase text--green fw-bold lang" key="observaciones">
                  Observaciones
                 </h6>
                 <p class="text--green">${form.comments.value}</p>

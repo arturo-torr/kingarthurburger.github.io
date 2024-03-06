@@ -11,25 +11,9 @@ class RestaurantsManagerView {
 
   bindInit(handler) {
     document.getElementById("init").addEventListener("click", (event) => {
-      // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-      let ol = this.breadcrumb.closest("ol");
-      let elements = ol.querySelectorAll("li");
-
-      // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-      for (const element of elements) {
-        if (element !== ol.firstElementChild) element.remove();
-      }
       handler();
     });
     document.getElementById("logo").addEventListener("click", (event) => {
-      // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-      let ol = this.breadcrumb.closest("ol");
-      let elements = ol.querySelectorAll("li");
-
-      // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-      for (const element of elements) {
-        if (element !== ol.firstElementChild) element.remove();
-      }
       handler();
     });
   }
@@ -46,7 +30,7 @@ class RestaurantsManagerView {
     // Dentro del div ponemos una cabecera
     container.insertAdjacentHTML(
       "beforeend",
-      `<h1 class="text--green bg__black my-3">Nuestros platos</h1>`
+      `<h1 class="text--green bg__black my-3 lang" key="dish-title">Nuestros platos</h1>`
     );
     // Recorremos el array con los platos y le damos el formato necesario
     for (const dish of dishes) {
@@ -64,8 +48,8 @@ class RestaurantsManagerView {
                 class="img-fluid rounded mb-4">
             </div>
             <div>
-              <h3>${dish.dish.name}</h3>
-              <div>${dish.dish.description}</div>
+              <h3 class="lang" key="${dish.dish.name}">${dish.dish.name}</h3>
+              <div class="lang" key="description-${dish.dish.name}">${dish.dish.description}</div>
             </div>
           </a>
         </div>`
@@ -119,17 +103,17 @@ class RestaurantsManagerView {
     // Se inserta una cabecera dentro del div creado
     container.insertAdjacentHTML(
       "beforeend",
-      `<h1 class="text--green bg__black mt-5">Nuestras categorías</h1>`
+      `<h1 class="text--green bg__black mt-5 lang" key="category-title">Nuestras categorías</h1>`
     );
     // Recorremos las categorías y le damos un formato visible para el HTML
     for (const category of categories) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<div class="col-12 col-sm-4 col-lg-4 col-md-4 col-xl-4 bg__black my-3">
+        `<div class="col-12 col-sm-12  col-md-12 col-lg-4 col-xl-4 bg__black my-3">
           <a class="text--green" data-category="${category.category.name}" href="#dish-list">
             <div class="border--green rounded p-3">
-              <h3>${category.category.name}</h3>
-              <div>${category.category.description}</div>
+              <h3 class="lang" key="${category.category.name}">${category.category.name}</h3>
+              <div class="lang" key="${category.category.description}">${category.category.description}</div>
             </div>
           </a>
         </div>`
@@ -148,7 +132,8 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang"
+        key="categorias"
         href="#"
         id="navCats"
         role="button"
@@ -168,7 +153,7 @@ class RestaurantsManagerView {
         `
           <a
             data-category="${category.category.name}"
-            class="dropdown-item"
+            class="dropdown-item lang" key="${category.category.name}"
             href="#dish-list"
           >
             ${category.category.name}
@@ -215,7 +200,7 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang" key="alergenos"
         href="#"
         id="navAllergens"
         role="button"
@@ -235,7 +220,7 @@ class RestaurantsManagerView {
         `
           <a
             data-allergen="${allergen.allergen.name}"
-            class="dropdown-item"
+            class="dropdown-item lang" key="${allergen.allergen.name}"
             href="#dish-list"
           >
             ${allergen.allergen.name}
@@ -269,7 +254,7 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang" key="menus"
         href="#"
         id="navMenus"
         role="button"
@@ -323,7 +308,7 @@ class RestaurantsManagerView {
     div.insertAdjacentHTML(
       "beforeend",
       `<a
-        class="nav-link dropdown-toggle"
+        class="nav-link dropdown-toggle lang" key="restaurantes"
         href="#"
         id="navRests"
         role="button"
@@ -350,6 +335,7 @@ class RestaurantsManagerView {
           </a>`
       );
     }
+
     div.append(container);
     // Inserta el menú de navegación creado
     this.nav.append(div);
@@ -370,28 +356,6 @@ class RestaurantsManagerView {
 
   // Función que permite mostrar una tarjeta personalizada con la información de cada restaurante
   showRestaurant(res, page) {
-    // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-    let ol = this.breadcrumb.closest("ol");
-    let elements = ol.querySelectorAll("li");
-    // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-    for (const element of elements) {
-      if (element !== ol.firstElementChild) element.remove();
-    }
-    // Elimina el atributo de aria-current
-    ol.firstElementChild.removeAttribute("aria-current");
-    // Creamos un elemento para el restaurante y le damos los estilos pertinentes
-    let pageLi = document.createElement("li");
-    pageLi.classList.add("breadcrumb-item", "text--green");
-    pageLi.textContent = page;
-    ol.appendChild(pageLi);
-
-    // Creamos un li, le damos estilos y lo agregamos
-    let li = document.createElement("li");
-    li.classList.add("breadcrumb-item", "text--green", "fw-bolder");
-    li.ariaCurrent = "page";
-    li.textContent = res.name;
-    ol.append(li);
-
     this.centralzone.replaceChildren();
     this.centralzone.classList.remove("d-none");
 
@@ -449,30 +413,6 @@ class RestaurantsManagerView {
 
   // Función que permite listar los platos
   listDishes(dishes, title, page) {
-    // Creación de las migas de pan, seleccionando el <ol> que las contiene y posteriormente sus <li>
-    let ol = this.breadcrumb.closest("ol");
-    let elements = ol.querySelectorAll("li");
-
-    // Lo recorremos y eliminamos aquello que no sea el Inicio para limpiar en cada llamada las migas de pan
-    for (const element of elements) {
-      if (element !== ol.firstElementChild) element.remove();
-    }
-    // Elimina el atributo de aria-current
-    ol.firstElementChild.removeAttribute("aria-current");
-    // Creamos un elemento para la categoría, alérgeno o menú y le damos los estilos pertinentes
-    let pageLi = document.createElement("li");
-    pageLi.classList.add("breadcrumb-item", "text--green");
-    pageLi.textContent = page;
-    // Lo introducimos en el ol
-    ol.appendChild(pageLi);
-
-    // Creamos un li, le damos estilos y lo agregamos
-    let li = document.createElement("li");
-    li.classList.add("breadcrumb-item", "text--green", "fw-bolder");
-    li.ariaCurrent = "page";
-    li.textContent = title;
-    ol.append(li);
-
     // Borra la zona central
     this.centralzone.replaceChildren();
     this.centralzone.classList.remove("d-none");
@@ -493,9 +433,9 @@ class RestaurantsManagerView {
       div.insertAdjacentHTML(
         "beforeend",
         `<figure class="card bg__black">
-            <a data-name="${dish.dish.name}" href="#single-dish" class="text--green text-center">
+            <a data-name="${dish.dish.name}" href="#single-dish" class="text--green text-center"">
               <img class="img-fluid" src="${dish.dish.image}">
-              <figcaption class="my-3">${dish.dish.name}</figcaption>
+              <figcaption class="my-3 lang" key="${dish.dish.name}">${dish.dish.name}</figcaption>
             </a>
         </figure>`
       );
@@ -505,23 +445,13 @@ class RestaurantsManagerView {
     // Le da una cabecera justo al principio indicando el nombre de la categoría, alérgeno, menú...
     container.insertAdjacentHTML(
       "afterbegin",
-      `<h1 class="text--green my-3">${title}</h1>`
+      `<h1 class="text--green my-3 lang" key="${title}">${title}</h1>`
     );
     this.centralzone.append(container);
   }
 
   // Función que permite mostrar una tarjeta personalizada con la información de cada plato
   showDish(dish, message) {
-    // Realizamos la creación de las migas de pan, eliminando el atributo de aria-current al último elemento y también la fuente bold
-    let ol = this.breadcrumb.closest("ol");
-    ol.lastElementChild.removeAttribute("aria-current");
-    ol.lastElementChild.classList.remove("fw-bolder");
-    // Creamos un elemento con el nombre del plato y lo agrega a las migas de pan
-    let li = document.createElement("li");
-    li.classList.add("breadcrumb-item", "text--green", "fw-bolder");
-    li.textContent = dish.name;
-    ol.appendChild(li);
-
     this.centralzone.replaceChildren();
 
     // Crea el contenedor y le añade las clases
@@ -533,7 +463,7 @@ class RestaurantsManagerView {
       container.insertAdjacentHTML(
         "beforeend",
         `<div class="row">
-          <div class="col-12">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 mx-auto">
             <div class="card bg__grey border--green">
               <div class="row align-items-center">
                 <div class="col-xl-6">
@@ -543,21 +473,21 @@ class RestaurantsManagerView {
                 </div>
                 <div class="col-xl-6 text-center">
                   <div class="p-4">
-                    <div class="mt-4 mb-3">
-                      <h2 class="text-uppercase text--green fw-bold fst-italic">${dish.name}</h2>
+                    <div class="mb-3">
+                      <h2 class="text-uppercase text--green fw-bold fst-italic lang" key="${dish.name}">${dish.name}</h2>
                     </div>
                     <div class="mt-4 mb-3">
-                      <h6 class="text-uppercase text--green fw-bold">Ingredientes</h6>
-                      <p class="text--green">${dish.stringIngredients}</p>
+                      <h6 class="text-uppercase text--green fw-bold lang" key="Ingredientes">Ingredientes</h6>
+                      <p class="text--green lang" key="ingredients-${dish.name}">${dish.stringIngredients}</p>
                     </div>
                     <div class="mt-5">
-                      <h6 class="text-uppercase text--green fw-bold">Descripción</h6>
-                      <p class="text--green">${dish.description}</p>
+                      <h6 class="text-uppercase text--green fw-bold lang" key="Descripcion">Descripción</h6>
+                      <p class="text--green lang" key="description-${dish.name}">${dish.description}</p>
                     </div>
                     <div class="cart mt-4 align-items-center">
                       <button
                         data-name="${dish.name}"
-                        class="newfood__content__button button--animated text-uppercase mr-2 px-4"
+                        class="newfood__content__button button--animated text-uppercase mr-2 px-4 lang" key="btn-descubrir"
                       >
                         Descubrir ahora
                       </button>

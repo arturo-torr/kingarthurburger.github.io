@@ -12,10 +12,10 @@ body {
 }
 
 /** ------------- NAVEGACIÓN ------------- **/
-header {
+.sticky__nav {
     position: sticky;
     top: 0px;
-    z-index: 10;
+    z-index: 100;
 }
 
 .navbar {
@@ -59,7 +59,7 @@ header {
     font-weight: bold;
 }
 
-.dropdown-menu>a:hover {
+.dropdown-menu>a:hover, .dropdown-menu>li:hover {
     background-color: #6db500;
 }
 
@@ -73,16 +73,16 @@ header {
     grid-template-columns: 1fr;
     background-image: url('../img/burger2.jpg');
     background-size: cover;
-    background-position: 25% 58%;
+    background-position: 25% 60%;
     width: 100%;
-    height: 36em;
+    height: 90vh;
 }
 
 .banner__content {
     color: #8CDD00;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2.5em;
     text-transform: uppercase;
     text-align: center;
     margin-top: 0.5em;
@@ -92,13 +92,13 @@ header {
     position: relative;
     display: block;
     margin: 0 auto;
-    top: -10em;
+    top: -30vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 13pt;
+    font-size: 1em;
     border-radius: 5px;
     background-color: #8CDD00;
-    width: 12em;
+    width: 13.5em;
     height: 3em;
     cursor: pointer;
     border: 0;
@@ -301,33 +301,21 @@ textarea {
 }
 
 /**  ------------- PÁGINA NOSOTROS ------------- **/
-#escene {
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-    width: 100%;
-    max-width: 590px;
-    height: 500px;
-    object-fit: cover;
-    box-shadow: 0px 0px 5px #8CDD00;
-}
-
 .ussection__information {
     color: #8CDD00;
+    background-color: #121318;
+    border: 1px solid #8CDD00;
+    border-radius: 5px;
 }
 
 .ussection__information details summary {
-    margin: 5vh 0vh;
-    font-size: 30px;
+    margin: 4vh 0vh;
+    font-size: 2.5em;
     cursor: pointer;
 }
 
 .ussection__information details summary:hover {
     color: #6db500;
-}
-
-.ussection__information--subsection {
-    margin-left: 3vw;
 }
 
 .text--green {
@@ -386,6 +374,15 @@ textarea {
 
 area {
     cursor: pointer;
+}
+
+.translate__img {
+    width: 100%;
+    max-width: 20px;
+}
+
+.translate__img:hover {
+    animation: pulse 1s infinite;
 }
 
 /** ---------- ANIMACIÓN DE BOTÓN --------------*/

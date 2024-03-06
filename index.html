@@ -11,8 +11,11 @@
     <title>KING ARTHUR BURGER</title>
 </head>
 
+<!-- Primera mejora: Añadir una ruleta interactiva con canvas para conseguir un cupón de descuento en el restaurante-->
+<!-- Segunda mejora: Añadir una sección dedicada a Eventos y Promociones destinada a publicar las próxima ofertas o eventos que vayan a ocurrir dentro del local-->
+
 <body>
-    <header>
+    <header class="sticky__nav">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="navbar__menu navbar-brand"><a href="#" id="logo" class="navbar__menu"> <img
@@ -22,24 +25,25 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <div class="navbar__menu mx-auto nav-item"><a href="#" id="init">Inicio</a>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="inicio" href="#"
+                            id="init">Inicio</a>
                     </div>
-                    <div class="navbar__menu mx-auto nav-item"><a href="nosotros.html">Nosotros</a></div>
-                    <div class="navbar__menu mx-auto nav-item"><a href="form.html">Reservas</a></div>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="nosotros"
+                            href="nosotros.html">Nosotros</a></div>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="reservas"
+                            href="form.html">Reservas</a></div>
+                    <div class="navbar__menu mx-auto nav-item"><a class="lang" key="galeria"
+                            href="galeria.html">Galería</a></div>
                 </div>
             </div>
-        </nav>
-        <nav id="breadcrumb" class="bg__grey text--green px-2" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item text--green" aria-current="page">Inicio</li>
-            </ol>
         </nav>
     </header>
 
     <main>
         <section class="banner">
-            <h1 class="banner__content">El placer es compartirlo</h1>
-            <a class="banner__button button--animated text-center" href="form.html">¡Haz tu reserva!</a>
+            <h1 class="banner__content lang" key="placer">El placer es compartirlo</h1>
+            <a class="banner__button button--animated text-center lang" key="btn-reserva" href="form.html">¡Haz tu
+                reserva!</a>
         </section>
 
         <section id="init_zone">
@@ -51,16 +55,12 @@
         <div class="container-fluid">
             <section class="content row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="img-container text-center">
-                        <div class="spinner-border text-light" role="status">
-                        </div>
-                        <img src="img/burger5.jpg" alt="BlackBurger" class="d-none">
-                    </div>
+                    <img src="img/burger5.jpg" alt="BlackBurger">
                 </div>
                 <div class="content__text col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <h1 class="content__text--title">BLACK BURGER<br>GOLD CHEDDAR</h1>
                     <p class="content__text--paragraph">8.90 €</p>
-                    <button class="content__button button--animated">CONSIGUE TU CUPÓN</button>
+                    <button class="content__button button--animated lang" key="btn-cupon">CONSIGUE TU CUPÓN</button>
                 </div>
             </section>
         </div>
@@ -69,34 +69,30 @@
             <section class="newfood row">
                 <div class="col-0 col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
                 <div class="newfood__box col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 mb-5">
-                    <div class="img-container text-center">
-                        <div class="spinner-border text-light" role="status">
-                        </div>
-                        <img src="img/burger6.jpg" class="img-fluid d-none" alt="SpanishBurger">
-                    </div>
+                    <img src="img/burger6.jpg" class="img-fluid" alt="SpanishBurger">
                     <div class="newfood__content mt-3">
                         <h1 class="newfood__content--title">SPANISH BURGER</h1>
-                        <p class="newfood__content--paragraph">Descubre el sabor de la auténtica hamburguesa al estilo
+                        <p class="newfood__content--paragraph lang" key="description1">Descubre el sabor de la auténtica
+                            hamburguesa al estilo
                             tradicional español,
                             con chorizo ibérico y tortilla de patata.
                         </p>
-                        <button class="newfood__content__button button--animated">DESCUBRIR AHORA</button>
+                        <button class="newfood__content__button button--animated lang" key="btn-descubrir">DESCUBRIR
+                            AHORA</button>
                     </div>
                 </div>
                 <div class="col-0 col-sm-0 col-md-2 col-lg-2 col-xl-2"></div>
                 <div class="newfood__box col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 mb-5">
-                    <div class="img-container text-center">
-                        <div class="spinner-border text-light" role="status">
-                        </div>
-                        <img src="img/chicken1.jpg" class="img-fluid d-none" alt="FriedChicken">
-                    </div>
+                    <img src="img/burger7.jpg" class="img-fluid" alt="FriedChicken">
                     <div class="newfood__content mt-3">
                         <h1 class="newfood__content--title">FRIED CHICKEN</h1>
-                        <p class="newfood__content--paragraph">Pollo al estilo Kentucky tradicional marinado en especias
+                        <p class="newfood__content--paragraph lang" key="description2">Pollo al estilo Kentucky
+                            tradicional marinado en especias
                             exóticas
                             que no dejan indiferente a ninguna persona.
                         </p>
-                        <button class="newfood__content__button button--animated">DESCUBRIR AHORA</button>
+                        <button class="newfood__content__button button--animated lang" key="btn-descubrir">DESCUBRIR
+                            AHORA</button>
                     </div>
                 </div>
                 <div class="col-0 col-sm-0 col-md-0 col-lg-1 col-xl-1"></div>
@@ -125,12 +121,12 @@
     </footer>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <!-- <script src="js/test.js" type="module"></script> -->
     <script src="./js/myrestaurant.js" type="module"></script>
-    <script src="./js/spinners.js"></script>
+    <script src="./js/language.js"></script>
 </body>
 
 </html>
